@@ -3,13 +3,9 @@ from psycopg2 import Error, connect
 from utils import sql_functions
 
 query_search = sql_functions.query_search
-
 insertion_string = sql_functions.insertion_string
-
 selection = sql_functions.selection
-
 insertion = sql_functions.insertion
-
 print_table_options = sql_functions.print_table_options
 
 try:
