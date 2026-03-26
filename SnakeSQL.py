@@ -7,6 +7,7 @@ insertion_string = sql_functions.insertion_string
 selection = sql_functions.selection
 insertion = sql_functions.insertion
 print_table_options = sql_functions.print_table_options
+update = sql_functions.update
 
 try:
     # Configuração da conexão com o banco de dados
@@ -261,6 +262,7 @@ try:
             print("Which table would you like to update?")
             print_table_options()
             command = input()
+            update(command, cursor)
         elif command == '4':
             print('Which table would you like to query?')
             print_table_options()

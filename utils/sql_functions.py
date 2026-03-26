@@ -139,7 +139,18 @@ def insertion(table_name, cursor):
     print(record)
 
 def update(table_name, cursor):
-    return
+    print("Please insert which table you would like to update and the content, separated by comma:\n")
+    to_update = input()
+    list_to_update = to_update.split(",")
+
+    print("Please insert which ID you are looking to update and its value, separated by comma: \n")
+    id_update = input()
+    list_id_update = id_update.split(",")
+
+    sql_query = f'''UPDATE {this_tables[table_name]} SET {list_to_update[0]} = %s WHERE {list_id_update[0]} = %s'''
+    cursor.execute(sql_query, (list_to_update[1], list_id_update[1]))
+    record = cursor.rowcount
+    print(record)
 
 # imprime ao usuário quais as tabelas ele tem como selecionar
 def print_table_options():
